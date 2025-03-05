@@ -8,7 +8,7 @@ pipeline{
 	    
                steps{
 		 echo 'cloning..'
-                 git 'https://github.com/Sukundhar-Pippalla/class-Code.git'
+                 git branch: 'main', poll: false, url: 'https://github.com/Sukundhar-Pippalla/class-Code.git'
               }
           }
           stage('Compile'){
