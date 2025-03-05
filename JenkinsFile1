@@ -5,7 +5,7 @@ pipeline{
 {
             agent any
             steps{
-                git 'https://github.com/Sukundhar-Pippalla/class-Code.git'
+                git branch: 'main', poll: false, url: 'https://github.com/Sukundhar-Pippalla/class-Code.git'
             }
 }
         }
@@ -24,7 +24,7 @@ pipeline{
         stage('UnitTest'){
             agent {label 'win_slave'}
             steps{
-                git 'https://github.com/Sukundhar-Pippalla/class-Code.git'
+                git branch: 'main', poll: false, url: 'https://github.com/Sukundhar-Pippalla/class-Code.git'
                 bat 'mvn test'
             }
         }
